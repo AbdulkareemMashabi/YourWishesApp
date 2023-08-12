@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
                 bottomTabDecoration("Write");
                 getSupportFragmentManager().popBackStack("Write",0);
             }
+            else
+                fm.popBackStack();
         } else {
             // If the back stack is empty, perform the default back button behavior (finish the activity)
             finish();
