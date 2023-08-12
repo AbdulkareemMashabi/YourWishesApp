@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">أمنيتك</string>
+    <string name="write_title">أدخل إيميلك, كلمة السر, وأمنيتك الجديدة. لإضافة أمنيتك الجيدة لقائمة أمنياتك</string>
+    <string name="new_write_title">أنت مسجل دخول بالفعل. أدخل أمنيتك الجديدة لإضافة الأمنية الجديدة لقائمة أمنياتك</string>
+    <string name="email">أدخل إيميلك هنا</string>
+    <string name="password">أدخل كلمة السر هنا</string>
+    <string name="password_confirmation">أدخل كلمة السر هنا مرة أخرى</string>
+    <string name="password_matching">كلمتا السر غير متطابقتين</string>
+    <string name="wish_field">أدخل أمنيتك الجديدة</string>
+    <string name="submit">تأكيد</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="write">كتابة</string>
+    <string name="read">قراءة</string>
+    <string name="read_title">أكتب إيميلك, وكلمة السر لقراءة أمنياتك</string>
+    <string name="wish">أمنيتك</string>
+    <string name="date">تاريخ</string>
+    <string name="add_wish_toast">تم إضافة أمنيتك بنجاح</string>
+    <string name="sign_up_toast">تم تسجيلك بنجاح</string>
+    <string name="validation_toast_1">إيميلك أو كلمة السر أو الأمنية غير صحيحين</string>
+    <string name="validation_toast_2">إيميلك أو كلمة السر غير صحيحين</string>
+    <string name="validation_toast_3">الأمنية يجب أن لا تكون خالية</string>
+    <string name="forget_password">نسيت كلمة المرور؟</string>
+    <string name="reset_password">تغيير كلمة السر</string>
+    <string name="email_reset_password">إيميل إعادة كلمة السر أرسل لك</string>
+    <string name="validation_toast_4">الإيميل غير صحيح</string>
+    <string name="english_language">الإنجليزية</string>
+    <string name="arabic_language">العربية</string>
+    <string name="empty_data_message">لا تملك أي أمنيات</string>
+    <string name="internet_connection">إتصال الإنترنت مطلوب</string>
+    <string name="successfully_delete">تم حذف الأمنية بنجاح</string>
+    <string name="failure_delete">لم يتم حذف الأمنية</string>
+</resources>

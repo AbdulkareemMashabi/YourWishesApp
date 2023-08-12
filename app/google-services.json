@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "494344922887",
+    "project_id": "wishes-89861",
+    "storage_bucket": "wishes-89861.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494344922887:android:80a65a60c3389c08b547a2",
+        "android_client_info": {
+          "package_name": "com.abdulkareemMashabi.wishapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494344922887-i861kjkj6040ojq07tvvv6ikgup9c6fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLUtOtZKuanNzO_s13Kep9zXweGTapdyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494344922887-i861kjkj6040ojq07tvvv6ikgup9c6fl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

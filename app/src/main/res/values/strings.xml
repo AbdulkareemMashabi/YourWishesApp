@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Your Wishes</string>
+    <string name="write_title">Enter your email, password, and a new wish, to add the new wish to your wishes history</string>
+    <string name="new_write_title">YOU HAVE SIGNED IN, enter a new wish to add the new wish to your wishes history</string>
+    <string name="email">Enter your email here</string>
+    <string name="password">Enter your password here</string>
+    <string name="password_confirmation">Enter your password again</string>
+    <string name="password_matching">The two passwords are not matching each other</string>
+    <string name="wish_field">Enter a new wish</string>
+    <string name="submit">Submit</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="write">Write</string>
+    <string name="read">Read</string>
+    <string name="read_title">Enter your email, and password to read your wishes</string>
+    <string name="wish">Wish</string>
+    <string name="date">Date</string>
+    <string name="add_wish_toast">Your wish is successfully added</string>
+    <string name="sign_up_toast">You have signed up successfully</string>
+    <string name="validation_toast_1">email or wish or password is Not valid</string>
+    <string name="validation_toast_2">email or password is Not valid</string>
+    <string name="validation_toast_3">wish should not be empty</string>
+    <string name="validation_toast_4">email is Not valid</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email_reset_password">email has ben sent to you</string>
+    <string name="english_language">English</string>
+    <string name="arabic_language">Arabic</string>
+    <string name="empty_data_message">You do not have any wishes</string>
+    <string name="internet_connection">Internet connection is required</string>
+    <string name="successfully_delete">The wish has been deleted successfully</string>
+    <string name="failure_delete">The wish has Not been deleted</string>
+</resources>

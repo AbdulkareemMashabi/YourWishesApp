@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragments.Read"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_title"
+        app:layout_constraintBottom_toTopOf="@id/email_read"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/light_green_200"
+        android:id="@+id/description_readPage"
+        />
+
+    <EditText
+        android:inputType="textEmailAddress"
+        android:id="@+id/email_read"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edit_text_shape"
+        android:hint="@string/email"
+        app:layout_constraintBottom_toTopOf="@+id/password_read_eye_icon"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+ />
+
+    <com.abdulkareemMashabi.wishapp.Components.PasswordInputField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_read_eye_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <com.abdulkareemMashabi.wishapp.Components.PasswordReset
+        android:id="@+id/read_forget_password"
+        app:layout_constraintTop_toBottomOf="@id/password_read_eye_icon"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <com.abdulkareemMashabi.wishapp.Components.CustomButton
+        android:id="@+id/confirm_read"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/email_read"
+        app:layout_constraintTop_toBottomOf="@+id/read_forget_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <com.abdulkareemMashabi.wishapp.Components.CustomButton
+        android:id="@+id/signUpReadScreen"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/confirm_read"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toBottomOf="@id/confirm_read"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

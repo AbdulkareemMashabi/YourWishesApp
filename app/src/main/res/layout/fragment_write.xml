@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.Write"
+    android:id="@+id/write_layout"
+    >
+    <TextView
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/write_title"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="20dp"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:textColor="@color/light_green_200"
+    android:id="@+id/description_writePage"
+    />
+    <EditText
+    android:inputType="textEmailAddress"
+    app:layout_constraintTop_toBottomOf="@+id/description_writePage"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/email"
+    android:hint="@string/email"
+    app:layout_constraintBottom_toTopOf="@id/password_write_eye_icon"
+    android:layout_marginVertical="20dp"
+    android:background="@drawable/edit_text_shape"
+    android:padding="10dp"
+        />
+    <com.abdulkareemMashabi.wishapp.Components.PasswordInputField
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/password_write_eye_icon"
+    app:layout_constraintTop_toBottomOf="@+id/email"
+    app:layout_constraintBottom_toTopOf="@+id/wish"
+        />
+
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/write_forget_password"
+        android:layout_width="match_parent"
+        android:id="@+id/wish"
+        android:hint="@string/wish_field"
+        app:layout_constraintTop_toBottomOf="@id/password_write_eye_icon"
+        android:layout_marginVertical="20dp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_shape_wish"
+        />
+
+    <com.abdulkareemMashabi.wishapp.Components.PasswordReset
+        android:id="@+id/write_forget_password"
+        app:layout_constraintTop_toBottomOf="@id/wish"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.abdulkareemMashabi.wishapp.Components.CustomButton
+        android:layout_marginVertical="20dp"
+        android:id="@+id/confirm"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/signUpWriteScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/write_forget_password"
+        />
+
+    <com.abdulkareemMashabi.wishapp.Components.CustomButton
+        android:id="@+id/signUpWriteScreen"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
