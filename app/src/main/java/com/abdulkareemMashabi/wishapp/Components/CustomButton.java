@@ -34,8 +34,7 @@ public class CustomButton extends RelativeLayout {
     // to set the text of the button
     public void setText(String title)
     {
-       TextView buttonText= this.findViewById(R.id.submit_button_text);
+       TextView buttonText= findViewById(R.id.submit_button_text);
        buttonText.setText(title);
-
     }
 }

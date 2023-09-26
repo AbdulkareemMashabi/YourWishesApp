@@ -63,8 +63,7 @@ public class PasswordInputField extends ConstraintLayout {
             {
                 setTag("not_visible");
                 eyeIcon.setImageResource(R.drawable.eye_not_visible_icon);
-                // next two lines to make the numbers hidden
-                passwordField.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                // next line to make the numbers hidden
                 passwordField.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
 

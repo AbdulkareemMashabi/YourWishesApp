@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         variablesDeclarations();
         //set custom action bar
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         handleToolbarButtonsPressed();
         bottomBarButtonsPressed();
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("email", "");
             editor.apply();
 
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finishAffinity();
 
@@ -159,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager.BackStackEntry entry = fm.getBackStackEntryAt(count - 1);
         String tag = entry.getName();
 
-        if (fm.getBackStackEntryCount() > 0) {
+        if (count > 0) {
             // If the current page is sign up, pop from stack
             if(tag.equals("Sign Up"))
             {
@@ -180,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             else if(tag.equals("Display Data"))
             {
                 bottomTabDecoration("Write");
-                getSupportFragmentManager().popBackStack("Write",0);
+                fm.popBackStack("Write",0);
             }
             else
                 fm.popBackStack();
@@ -195,14 +194,14 @@ public class MainActivity extends AppCompatActivity {
         if(situation.equals("Read"))
         {
             // if the user clicked on the read tab make it white and make its text appear to the user, and the write tab will be black and its text will be disappear
-            menu.findViewById(R.id.readButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.white, null))));
+            menu.findViewById(R.id.readButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.text_input_field, null))));
             menu.findViewById(R.id.writeButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.black, null))));
             menu.findViewById(R.id.read_word).setVisibility(View.VISIBLE);
             menu.findViewById(R.id.write_word).setVisibility(View.INVISIBLE);
         }
         else {
             // if the user clicked on the write tab make it white and make its text appear to the user, and the read tab will be black and its text will be disappear
-            menu.findViewById(R.id.writeButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.white, null))));
+            menu.findViewById(R.id.writeButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.text_input_field, null))));
             menu.findViewById(R.id.readButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.black, null))));
             menu.findViewById(R.id.write_word).setVisibility(View.VISIBLE);
             menu.findViewById(R.id.read_word).setVisibility(View.INVISIBLE);
@@ -223,14 +222,12 @@ public class MainActivity extends AppCompatActivity {
         Locale locale = new Locale(defaultLanguage);
         Locale.setDefault(locale);
 
-        //support previous versions of android
         config.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
     }
     private void onLanguageSelected(){
         Locale current;
-        //support previous versions of android
         current = getResources().getConfiguration().getLocales().get(0);
 
         //if the arabic language button is selected

@@ -26,7 +26,8 @@
         android:layout_weight="1"
         android:id="@+id/constraint_contains_buttons"
         android:visibility="invisible"
-        android:background="@color/light_blue_500"
+        android:background="@color/footer_header"
+            android:elevation="16dp"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,7 +48,7 @@
                 app:layout_constraintBottom_toTopOf="@id/write_word"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/text_input_field"
                     />
                 <TextView
                 android:clickable="false"
@@ -58,7 +59,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:id="@+id/write_word"
                 android:text="@string/write"
-                android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                android:textColor="@color/text_input_field"
+
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -91,8 +95,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:text="@string/read"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
                 android:visibility="invisible"
-                android:textColor="@color/white"
+                android:textColor="@color/text_input_field"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,7 +111,8 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:id="@+id/toolbar"
-    android:background="@color/light_blue_500"
+    android:background="@color/footer_header"
+        android:elevation="16dp"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -139,7 +146,7 @@
             app:layout_constraintEnd_toStartOf="@+id/logout"
             android:id="@+id/app_name"
             android:text="@string/app_name"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="20sp"
@@ -177,7 +184,8 @@
     android:id="@+id/language_layout"
     android:layout_below="@id/toolbar"
     android:padding="10dp"
-    android:background="@drawable/edit_text_shape_wish"
+    android:background="@drawable/edit_text_shape"
+        android:elevation="16dp"
         >
         <com.abdulkareemMashabi.wishapp.Components.CustomButton
         app:layout_constraintTop_toTopOf="parent"

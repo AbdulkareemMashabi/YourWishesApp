@@ -92,7 +92,7 @@ public class SignUp extends Fragment {
                         requireActivity().getSupportFragmentManager().popBackStack("Write",0);
 
                         // decorate the write button in the bottom tab to simulate that the write page is appear in the screen
-                        menu.findViewById(R.id.writeButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.white, null))));
+                        menu.findViewById(R.id.writeButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.text_input_field, null))));
                         menu.findViewById(R.id.readButton).setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.black, null))));
                         menu.findViewById(R.id.write_word).setVisibility(View.VISIBLE);
                         menu.findViewById(R.id.read_word).setVisibility(View.INVISIBLE);

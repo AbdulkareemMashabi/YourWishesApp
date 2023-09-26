@@ -56,9 +56,9 @@ public class LottieFragment extends Fragment {
                 // make the bottom tab visible
                 requireActivity().findViewById(R.id.constraint_contains_buttons).setVisibility(View.VISIBLE);
                 // set the background color of the app
-                requireActivity().findViewById(R.id.mainLayout).setBackgroundResource(R.drawable.app_background);
+                requireActivity().findViewById(R.id.mainLayout).setBackgroundColor(getResources().getColor(R.color.background_color,null));
                 // make language icon visible
-                requireActivity().findViewById(R.id.toolbar).findViewById(R.id.language).setVisibility(View.VISIBLE);
+                requireActivity().findViewById(R.id.language).setVisibility(View.VISIBLE);
 
                 readUserEmail();
 

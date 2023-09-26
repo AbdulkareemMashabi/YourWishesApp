@@ -9,7 +9,10 @@
     <color name="white" >#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="grey">#808080</color>
-    <color name="light_blue_200">#b5e4f6</color>
-    <color name="light_blue_500">#1898D9</color>
-    <color name="light_green_200">#a5db4f</color>
+    <color name="footer_header">#1BCFE4</color>
+    <color name="text_input_field">#E6E6E6</color>
+    <color name="text_color">#1E1E1E</color>
+    <color name="background_color">#1EC0D3</color>
+    <color name="buttons_color">#3164F4</color>
+    <color name="button_text_color">#FFFFFF</color>
 </resources>

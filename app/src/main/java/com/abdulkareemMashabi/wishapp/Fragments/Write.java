@@ -49,20 +49,14 @@ public class Write extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // define FirebaseAuth variable
-        user = FirebaseAuth.getInstance();
-
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
-        // make the bottom bar visible
-        requireActivity().findViewById(R.id.constraint_contains_buttons).setVisibility(View.VISIBLE);
+        // define FirebaseAuth variable
+        user = FirebaseAuth.getInstance();
         // read the user email to indicate if the user is signed in form other fragments, if yes change the design of the fragment by "changeVisibility" function
         userEmail= viewModal.getUserEmail().getValue();
+        // make the bottom bar visible
+        requireActivity().findViewById(R.id.constraint_contains_buttons).setVisibility(View.VISIBLE);
         changeVisibility();
     }
 
@@ -129,7 +123,7 @@ public class Write extends Fragment {
                                 writeToFireBase(emailText, wishText);
 
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // If sign in fails, display a message to the user
                             Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
                         }
                     });
@@ -138,9 +132,6 @@ public class Write extends Fragment {
         // if he already signed in, write the wish in the firebase
         else
             writeToFireBase(userEmail, wishText);
-
-
-
     }
 
     private void writeToFireBase(String email, String wishText) {
@@ -188,11 +179,11 @@ public class Write extends Fragment {
 
         db = FirebaseFirestore.getInstance();
         // declare the description that will be displayed in the top of the page
-        description = (TextView) view.findViewById(R.id.description_writePage);
+        description = view.findViewById(R.id.description_writePage);
 
         // declare the wish, and the email edit text
-        wish = (EditText)view.findViewById(R.id.wish);
-        email = (EditText)view.findViewById(R.id.email);
+        wish = view.findViewById(R.id.wish);
+        email = view.findViewById(R.id.email);
 
         // declare password component
         passwordView = view.findViewById(R.id.password_write_eye_icon);

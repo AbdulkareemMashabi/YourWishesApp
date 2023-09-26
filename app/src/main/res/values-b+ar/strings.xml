@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">أمنيتك</string>
-    <string name="write_title">أدخل إيميلك, كلمة السر, وأمنيتك الجديدة. لإضافة أمنيتك الجيدة لقائمة أمنياتك</string>
+    <string name="write_title">أدخل إيميلك, كلمة السر, وأمنيتك الجديدة. لإضافة أمنيتك الجديدة لقائمة أمنياتك</string>
     <string name="new_write_title">أنت مسجل دخول بالفعل. أدخل أمنيتك الجديدة لإضافة الأمنية الجديدة لقائمة أمنياتك</string>
     <string name="email">أدخل إيميلك هنا</string>
     <string name="password">أدخل كلمة السر هنا</string>

@@ -85,14 +85,13 @@ public class Services {
     public static void replacement(Fragment fragment, FragmentActivity activity, String tag){
         FragmentManager fm = activity.getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frameLayout,fragment, tag).addToBackStack(tag).commit();
+        ft.replace(R.id.frameLayout,fragment).addToBackStack(tag).commit();
     }
 
     public static void replacementWithoutAddingToBackStack(Fragment fragment, FragmentActivity activity){
         FragmentManager fm =  activity.getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frameLayout,fragment);
-        ft.commit();
+        ft.replace(R.id.frameLayout,fragment).commit();
     }
 
     public static boolean isConnectedToNetwork(Context context) {

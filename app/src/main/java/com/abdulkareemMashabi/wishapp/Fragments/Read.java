@@ -37,15 +37,10 @@ public class Read extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // define FirebaseAuth variable
-        user = FirebaseAuth.getInstance();
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
+        // define FirebaseAuth variable
+        user = FirebaseAuth.getInstance();
         // make the bottom tab visible when it is invisible
         requireActivity().findViewById(R.id.constraint_contains_buttons).setVisibility(View.VISIBLE);
     }
@@ -89,8 +84,6 @@ public class Read extends Fragment {
                             Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "read", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
                         }
                     });
-
-
     }
 
     private void variablesDeclarations(View view)
@@ -99,7 +92,7 @@ public class Read extends Fragment {
 
         // declare email and password EditText field
         email = view.findViewById(R.id.email_read);
-        password= view.findViewById(R.id.password_read_eye_icon).findViewById(R.id.password);
+        password= view.findViewById(R.id.password);
 
 
         // declare submit button with its lottie animation when calling an API and its text
