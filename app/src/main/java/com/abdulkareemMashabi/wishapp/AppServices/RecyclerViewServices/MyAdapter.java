@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Wish item = items.get(position);
+        Wish item = items.get(holder.getAdapterPosition());
         holder.date.setText(item.getDate());
         holder.wish.setText(item.getWish());
         // delete the wish from firebase when the user click on delete button
@@ -63,9 +63,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             // delete the wish from firebase
             db.document(userEmail + "/" + item.getDocumentId()).delete().addOnSuccessListener(unused -> {
                 // remove the item from the list locally
-                items.remove(position);
+                items.remove(holder.getAdapterPosition());
                 // notify recycler view about deleted item
-                notifyItemRemoved(position);
+                notifyItemRemoved(holder.getAdapterPosition());
                 hideOverLay();
                 Services.toastMessages("onSuccess",null,null, "Display Data", null, activity);
             }).addOnFailureListener(e -> {
