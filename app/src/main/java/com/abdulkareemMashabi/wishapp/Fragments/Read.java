@@ -17,8 +17,6 @@ import com.abdulkareemMashabi.wishapp.Components.CustomButton;
 import com.abdulkareemMashabi.wishapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
-
 public class Read extends Fragment {
     EditText email;
     EditText password;
@@ -67,7 +65,7 @@ public class Read extends Fragment {
         // check network connectivity
         if(!Services.isConnectedToNetwork(requireContext()))
         {
-            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "read", getResources().getString(R.string.internet_connection), requireActivity());
+            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "read", new Exception(getResources().getString(R.string.internet_connection)), requireActivity());
         }
         // sign in process
         else
@@ -81,7 +79,7 @@ public class Read extends Fragment {
                             Services.replacement(new DisplayData(), requireActivity(), "Display Data");
                         } else {
                             // If sign in fails, display a message to the user.
-                            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "read", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
+                            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "read", task.getException(), requireActivity());
                         }
                     });
     }
@@ -131,7 +129,7 @@ public class Read extends Fragment {
             }
             //if either the wish or the email are empty, the toast will be displayed
             else
-                Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "Read", getResources().getString(R.string.validation_toast_2), requireActivity());
+                Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "Read", new Exception(getResources().getString(R.string.validation_toast_2)), requireActivity());
 
         });
     }

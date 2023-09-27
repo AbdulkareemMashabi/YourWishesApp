@@ -17,13 +17,16 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.abdulkareemMashabi.wishapp.R;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import java.util.Locale;
 
 public class Services {
 
     // This method is handling the toast after calling Firebase API, and the toast for different purposes
-    public static void toastMessages (String situation, TextView submitButtonText, LottieAnimationView submitButtonLoading, String flow, String errorMessage, Activity currentActivity)
+    public static void toastMessages (String situation, TextView submitButtonText, LottieAnimationView submitButtonLoading, String flow, Exception e, Activity currentActivity)
     {
         //variables declaration for the toast
         Toast appToast = new Toast(currentActivity.getBaseContext());
@@ -53,8 +56,11 @@ public class Services {
         }
         // handle failure message for API calling
         else if (situation.equals("onFailure")){
+            String message = e.getMessage();
+            if(getAppLanguage())
+                message = translateBackEndErrorMessage(e, currentActivity);
             toastImage.setImageResource(R.drawable.x_mark);
-            toastText.setText(errorMessage);
+            toastText.setText(message);
         }
         //set the view toast and show it to the user
         appToast.setView(toastView);
@@ -109,6 +115,20 @@ public class Services {
     public static boolean getAppLanguage() {
         // get if the current app language is arabic or not
         return Locale.getDefault().getLanguage().equals("ar");
+    }
+
+    public static String translateBackEndErrorMessage(Exception error, Activity currentActivity) {
+        try {
+            throw error;
+        } catch(FirebaseAuthWeakPasswordException e) {
+            return currentActivity.getString(R.string.back_end_error_weak_password);
+        } catch(FirebaseAuthInvalidCredentialsException e) {
+            return currentActivity.getString(R.string.back_end_error_invalid_credential);
+        } catch(FirebaseAuthUserCollisionException e) {
+            return currentActivity.getString(R.string.back_end_error_exist_account);
+        } catch(Exception e) {
+            return error.getMessage();
+        }
     }
 
 }

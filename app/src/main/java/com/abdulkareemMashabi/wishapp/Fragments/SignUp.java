@@ -73,7 +73,7 @@ public class SignUp extends Fragment {
         // if there is no connection, the toast will appear
         if(!Services.isConnectedToNetwork(requireContext()))
         {
-            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "signUp", getResources().getString(R.string.internet_connection), requireActivity());
+            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "signUp", new Exception(getResources().getString(R.string.internet_connection)), requireActivity());
         }
         // sign up process
         else
@@ -101,7 +101,7 @@ public class SignUp extends Fragment {
                         Services.toastMessages("onSuccess",submitButtonText,submitButtonLoading, "signUp", null, requireActivity());
                     } else {
                         // If sign up fails, display a message to the user.
-                        Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "signUp", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
+                        Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "signUp", task.getException(), requireActivity());
                     }
                 });
     }
@@ -144,9 +144,9 @@ public class SignUp extends Fragment {
             else {
                 // toast will appear with validation reason
                 if (!passwordText.equals(confirmationPasswordText) )
-                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "signUp", getResources().getString(R.string.password_matching), requireActivity());
+                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "signUp", new Exception(getResources().getString(R.string.password_matching)), requireActivity());
                 else
-                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "signUp", getResources().getString(R.string.validation_toast_2), requireActivity());
+                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "signUp", new Exception(getResources().getString(R.string.validation_toast_2)), requireActivity());
             }
         });
     }

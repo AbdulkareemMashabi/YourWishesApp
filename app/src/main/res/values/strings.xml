@@ -29,4 +29,7 @@
     <string name="internet_connection">Internet connection is required</string>
     <string name="successfully_delete">The wish has been deleted successfully</string>
     <string name="failure_delete">The wish has Not been deleted</string>
+    <string name="back_end_error_weak_password">Password should be minimum 6 characters</string>
+    <string name="back_end_error_invalid_credential">Email or password are incorrect</string>
+    <string name="back_end_error_exist_account">This email is already signed up</string>
 </resources>

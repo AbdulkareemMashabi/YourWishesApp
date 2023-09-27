@@ -16,7 +16,7 @@
     <string name="date">تاريخ</string>
     <string name="add_wish_toast">تم إضافة أمنيتك بنجاح</string>
     <string name="sign_up_toast">تم تسجيلك بنجاح</string>
-    <string name="validation_toast_1">إيميلك أو كلمة السر أو الأمنية غير صحيحين</string>
+    <string name="validation_toast_1">إيميلك أو كلمة السر أو الأمنية غير صحيحة</string>
     <string name="validation_toast_2">إيميلك أو كلمة السر غير صحيحين</string>
     <string name="validation_toast_3">الأمنية يجب أن لا تكون خالية</string>
     <string name="forget_password">نسيت كلمة المرور؟</string>
@@ -29,4 +29,7 @@
     <string name="internet_connection">إتصال الإنترنت مطلوب</string>
     <string name="successfully_delete">تم حذف الأمنية بنجاح</string>
     <string name="failure_delete">لم يتم حذف الأمنية</string>
+    <string name="back_end_error_weak_password">كلمة السر يجب أن تحتوي على الأقل 6 أرقام أو أحرف</string>
+    <string name="back_end_error_invalid_credential">الإيميل أو كلمة السر غير صحيحين</string>
+    <string name="back_end_error_exist_account">هذا الحساب مسجل مسبقا</string>
 </resources>

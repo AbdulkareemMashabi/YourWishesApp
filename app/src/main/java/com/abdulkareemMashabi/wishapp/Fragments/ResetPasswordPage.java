@@ -14,7 +14,6 @@ import com.abdulkareemMashabi.wishapp.AppServices.Services;
 import com.abdulkareemMashabi.wishapp.Components.CustomButton;
 import com.abdulkareemMashabi.wishapp.R;
 import com.google.firebase.auth.FirebaseAuth;
-import java.util.Objects;
 
 public class ResetPasswordPage extends Fragment {
 
@@ -69,7 +68,7 @@ public class ResetPasswordPage extends Fragment {
 
                     } else {
                         /// if the reset email does not send, failure message toast should appear
-                        Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "reset", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
+                        Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "reset", task.getException(), requireActivity());
                     }
                 });
     }
@@ -105,7 +104,7 @@ public class ResetPasswordPage extends Fragment {
             }
             else
                 // toast will appear with validation reason
-                Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "reset", getResources().getString(R.string.validation_toast_4), requireActivity());
+                Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "reset", new Exception(getResources().getString(R.string.validation_toast_4)), requireActivity());
         });
     }
 }

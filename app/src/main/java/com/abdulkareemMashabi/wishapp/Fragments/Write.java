@@ -23,7 +23,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Objects;
 
 public class Write extends Fragment {
     CustomButton confirmButton;
@@ -110,7 +109,7 @@ public class Write extends Fragment {
         // if there is no connection
         if(!Services.isConnectedToNetwork(requireContext()))
         {
-            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", getResources().getString(R.string.internet_connection), requireActivity());
+            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", new Exception(getResources().getString(R.string.internet_connection)), requireActivity());
         }
         // when the user not signed in before, the userEmail in the view modal will be empty
         else if(userEmail.isEmpty())
@@ -124,7 +123,7 @@ public class Write extends Fragment {
 
                         } else {
                             // If sign in fails, display a message to the user
-                            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
+                            Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", task.getException(), requireActivity());
                         }
                     });
 
@@ -155,7 +154,7 @@ public class Write extends Fragment {
                 })
                 .addOnFailureListener(e -> {
                     // display failure message to the user
-                    Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", e.getMessage(), requireActivity());
+                    Services.toastMessages("onFailure",submitButtonText,submitButtonLoading, "write", e, requireActivity());
                 });
         // save the email of the user if he not signed in before, to indicate he is signing in, so we will change the design of this fragment by "changeVisibility" function
         if(userEmail.isEmpty())
@@ -228,10 +227,10 @@ public class Write extends Fragment {
                 // handle toast message based if the user signed in or not. If the user signed in, the user email will be saved through view modal, otherwise the user email will be empty in view modal
                 // if the user signed in (so the user email in the view modal is not empty), he should write the wish only correctly
                 if (!userEmail.isEmpty())
-                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "write", getResources().getString(R.string.validation_toast_3), requireActivity());
+                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "write", new Exception(getResources().getString(R.string.validation_toast_3)), requireActivity());
                     // if the user not signed in, he should write the email and the wish and the password correctly
                 else
-                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "write", getResources().getString(R.string.validation_toast_1), requireActivity());
+                    Services.toastMessages("onFailure", submitButtonText, submitButtonLoading, "write", new Exception(getResources().getString(R.string.validation_toast_1)), requireActivity());
             }
         });
     }

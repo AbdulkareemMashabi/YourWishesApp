@@ -27,7 +27,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class DisplayData extends Fragment {
 
@@ -166,7 +165,7 @@ public class DisplayData extends Fragment {
 
                     } else {
                         // if the API call fail, display a toast and display a text in the middle of the fragment for no data availability
-                        Services.toastMessages("onFailure",null,null, "Display Data", Objects.requireNonNull(task.getException()).getMessage(), requireActivity());
+                        Services.toastMessages("onFailure",null,null, "Display Data", task.getException(), requireActivity());
                         hideWhenThereIsNoContent();
                     }
                     // hide the overlay

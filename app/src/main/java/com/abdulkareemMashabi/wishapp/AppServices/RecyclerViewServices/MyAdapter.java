@@ -69,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 hideOverLay();
                 Services.toastMessages("onSuccess",null,null, "Display Data", null, activity);
             }).addOnFailureListener(e -> {
-                Services.toastMessages("onFailure",null,null, "Display Data", activity.getResources().getString(R.string.failure_delete), activity);
+                Services.toastMessages("onFailure",null,null, "Display Data", e, activity);
                 hideOverLay();
             });
 
