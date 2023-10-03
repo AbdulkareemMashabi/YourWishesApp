@@ -117,7 +117,7 @@ public class Services {
         return Locale.getDefault().getLanguage().equals("ar");
     }
 
-    public static String translateBackEndErrorMessage(Exception error, Activity currentActivity) {
+    private static String translateBackEndErrorMessage(Exception error, Activity currentActivity) {
         try {
             throw error;
         } catch(FirebaseAuthWeakPasswordException e) {
